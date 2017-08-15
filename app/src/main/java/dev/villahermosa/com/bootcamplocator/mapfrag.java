@@ -74,7 +74,6 @@ public class mapfrag extends Fragment implements OnMapReadyCallback{
 
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
 
-                    //You should make sure this is a valid zip code - check total count and characters
                     String text = zipText.getText().toString();
                     int zip = Integer.parseInt(text);
 
@@ -110,8 +109,9 @@ public class mapfrag extends Fragment implements OnMapReadyCallback{
         try {
             Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(latLng.latitude,latLng.longitude, 1);
-            final int zip = Integer.parseInt(addresses.get(0).getPostalCode());
-            updateMapForZip(zip);
+//            updateMapForZip(11111);
+//            final int zip = Integer.parseInt(addresses.get(0).getPostalCode());
+//            updateMapForZip(zip);
         } catch (IOException exception){
 
         }
